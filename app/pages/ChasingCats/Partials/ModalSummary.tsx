@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FaCat } from "react-icons/fa";
+import { useNavigate } from "react-router";
 import PrimaryButton from "~/components/Button";
 import Modal from "~/components/Modal";
 import Text from "~/components/Text";
@@ -28,6 +29,8 @@ interface ModalTryAgainProps {
 function ModalWin(props: ModalWinProps) {
   const { isOpen, MAXCAT, userPoint } = props;
 
+  const navigate = useNavigate();
+
   return (
     <Modal isOpen={isOpen}>
       <div className="bg-green-500 rounded-3xl max-[320px]:py-9 max-[320px]:px-8 py-9 px-16 shadow-[0px_4px_0px_0px_rgba(0,0,0,0.6)] border border-gray-600">
@@ -55,7 +58,7 @@ function ModalWin(props: ModalWinProps) {
       <div className="flex gap-x-4 justify-center">
         <PrimaryButton
           className="mb-5 bg-green-500 text-white"
-          onClick={() => {}}
+          onClick={() => navigate("/game/prologue-tic-tac-toe")}
         >
           Continue
         </PrimaryButton>
@@ -66,6 +69,8 @@ function ModalWin(props: ModalWinProps) {
 
 function ModalTryAgain(props: ModalTryAgainProps) {
   const { isOpen, MAXCAT, userPoint, handleRestart } = props;
+
+  const navigate = useNavigate();
 
   return (
     <Modal isOpen={isOpen}>
@@ -94,14 +99,11 @@ function ModalTryAgain(props: ModalTryAgainProps) {
       <div className="flex gap-x-4">
         <PrimaryButton
           className="mb-5"
-          onClick={() => {}}
+          onClick={() => navigate("/game/prologue-tic-tac-toe")}
         >
           No
         </PrimaryButton>
-        <PrimaryButton
-          className="mb-5"
-          onClick={handleRestart}
-        >
+        <PrimaryButton className="mb-5" onClick={handleRestart}>
           Try Again
         </PrimaryButton>
       </div>
