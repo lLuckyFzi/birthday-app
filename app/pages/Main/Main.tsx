@@ -48,9 +48,9 @@ function Main() {
                 </div>
             </div>
             <div ref={containerRef} className='flex flex-col gap-6 justify-center items-center relative h-[250px]'>
-                <PrimaryButton className='bg-[#FFDD32] font-medium' onClick={() => navigate("/game/prologue-chasing-cats", { replace: true })}>Sure!</PrimaryButton>
+                <PrimaryButton className='bg-[#FFDD32] font-medium text-white' onClick={() => navigate("/game/prologue-chasing-cats", { replace: true })}>Sure!</PrimaryButton>
                 <PrimaryButton
-                    className='text-gray font-medium absolute bg-white w-[180px]'
+                    className='text-gray font-medium absolute bg-white'
                     onClick={handlePlayedButton}
                     style={playedButton?.isMoved ? {
                         top: playedButton?.position.top,
