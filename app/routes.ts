@@ -10,4 +10,7 @@ export default [
 
   route("game/prologue-puzzle", "routes/puzzle/prologue.tsx"),
   route("game/puzzle", "routes/puzzle/puzzle.tsx"),
+
+  route("game/prologue-greeting-cards", "routes/greeting-cards/prologue.tsx"),
+  route("game/greeting-cards", "routes/greeting-cards/greeting-cards.tsx"),
 ] satisfies RouteConfig;
