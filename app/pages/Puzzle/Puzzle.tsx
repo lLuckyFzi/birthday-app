@@ -3,6 +3,7 @@ import Text from "~/components/Text";
 import { motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 import PrimaryButton from "~/components/Button";
+import { useNavigate } from "react-router";
 
 const randomColor = () => `hsl(${Math.floor(Math.random() * 360)}, 70%, 50%)`;
 
@@ -13,6 +14,8 @@ const items = text.split("").map((c) => ({
 }));
 
 function Puzzle() {
+  const navigate = useNavigate()
+
   const [isCompleted, setIsCompleted] = useState(false);
   const [placed, setPlaced] = useState<boolean[]>(
     Array(items.length).fill(false)
@@ -155,7 +158,7 @@ function Puzzle() {
               <Text weight="bold" size="h4">
                 This is your happy day! Congratulations!
               </Text>
-              <PrimaryButton className="bg-green-500 text-white">
+              <PrimaryButton className="bg-green-500 text-white" onClick={() => navigate("/game/prologue-greeting-cards")}>
                 Continue
               </PrimaryButton>
             </div>
