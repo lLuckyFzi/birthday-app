@@ -50,7 +50,7 @@ function WinnerDescription(props: ResetProps) {
           Congratulations! You can try again or continue to the next game!
         </Text>
       </div>
-      <div className="flex gap-x-6 max-[280px]:flex max-[280px]:flex-col gap-y-5">
+      <div className="flex gap-x-6 max-[325px]:flex max-[325px]:flex-col gap-y-5">
         <PrimaryButton
           onClick={props.resetGame}
           className="bg-blue-500 text-white"
@@ -69,6 +69,8 @@ function WinnerDescription(props: ResetProps) {
 }
 
 function DrawDescription(props: ResetProps) {
+  const navigate = useNavigate();
+
   return (
     <div className="flex flex-col gap-y-14 justify-center items-center">
       <div className="flex flex-col items-center gap-3">
@@ -79,14 +81,17 @@ function DrawDescription(props: ResetProps) {
           Congratulations! You can try again or continue to the next game!
         </Text>
       </div>
-      <div className="flex gap-x-6 max-[280px]:flex max-[280px]:flex-col gap-y-5">
+      <div className="flex gap-x-6 max-[325px]:flex max-[325px]:flex-col gap-y-5">
         <PrimaryButton
           onClick={props.resetGame}
           className="bg-blue-500 text-white"
         >
           Try Again
         </PrimaryButton>
-        <PrimaryButton className="bg-green-500 text-white">
+        <PrimaryButton
+          className="bg-green-500 text-white"
+          onClick={() => navigate("/game/prologue-puzzle")}
+        >
           Continue
         </PrimaryButton>
       </div>
