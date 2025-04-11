@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BiCircle } from "react-icons/bi";
 import { CgClose } from "react-icons/cg";
-import { useLocation } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import { twMerge } from "tailwind-merge";
 import PrimaryButton from "~/components/Button";
 import Text from "~/components/Text";
@@ -38,6 +38,8 @@ function LoseDescription(props: ResetProps) {
 }
 
 function WinnerDescription(props: ResetProps) {
+  const navigate = useNavigate();
+
   return (
     <div className="flex flex-col gap-y-14 justify-center items-center">
       <div className="flex flex-col items-center gap-3">
@@ -55,7 +57,10 @@ function WinnerDescription(props: ResetProps) {
         >
           Try Again
         </PrimaryButton>
-        <PrimaryButton className="bg-green-500 text-white">
+        <PrimaryButton
+          className="bg-green-500 text-white"
+          onClick={() => navigate("/game/prologue-puzzle")}
+        >
           Continue
         </PrimaryButton>
       </div>
@@ -98,7 +103,7 @@ function TicTacToe() {
   const [winner, setWinner] = useState<Player | "Draw">(null);
 
   const botSymbol = playerSymbol === "X" ? "O" : "X";
-  
+
   const winningCombos = [
     [0, 1, 2],
     [3, 4, 5],

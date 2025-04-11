@@ -11,7 +11,7 @@ type PrimaryButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
 function PrimaryButton(props: PrimaryButtonProps) {
   const { children, className, ...otherProps } = props;
   const combinedClassName = twMerge(
-    "py-[6px] border border-[#666666] rounded-lg max-[320px]:w-[120px] w-[150px] shadow-[0px_4px_0px_0px_rgba(0,0,0,0.6)] active:shadow-none active:translate-y-[4px]",
+    "py-[6px] border border-[#666666] rounded-lg flex justify-center w-[150px] shadow-[0px_4px_0px_0px_rgba(0,0,0,0.6)] active:shadow-none active:translate-y-[4px]",
     className
   );
 
