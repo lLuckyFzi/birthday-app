@@ -17,5 +17,6 @@ export default [
   route("game/prologue-wishing-form", "routes/wishing-form/prologue.tsx"),
   route("game/wishing-form", "routes/wishing-form/wishing-form.tsx"),
   route("game/finish", "routes/wishing-form/finish.tsx"),
-  
+
+  route("menu", "routes/main-menu.tsx"),
 ] satisfies RouteConfig;
