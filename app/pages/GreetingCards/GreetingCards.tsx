@@ -5,9 +5,12 @@ import { MotionConfig } from 'framer-motion'
 import ModalFlipCard from './Partials/ModalFlipCard'
 import cardData from './data/cardData'
 import PrimaryButton from '~/components/Button'
+import { useNavigate } from 'react-router'
 
 
 function GreetingCards() {
+    const navigate = useNavigate()
+
     const [selectedId, setSelectedId] = useState<string | null>(null)
 
     function onSelectCard(id: string | null) {
@@ -28,7 +31,7 @@ function GreetingCards() {
                 </div>
                 <div className='flex flex-col items-center justify-center text-center gap-y-6'>
                     <Text size='caption'>Remember, I pray for you without limit</Text>
-                    <PrimaryButton className='bg-green-500 text-white'>Continue</PrimaryButton>
+                    <PrimaryButton className='bg-green-500 text-white' onClick={() => navigate("/game/prologue-wishing-form")}>Continue</PrimaryButton>
                 </div>
             </div>
             <ModalFlipCard title={`Wish Card`} selectedCard={selectedId} onSelectedCard={(v) => setSelectedId(v)} data={cardData} />
