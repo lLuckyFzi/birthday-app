@@ -1,8 +1,11 @@
 import React from 'react'
+import { useNavigate } from 'react-router'
 import PrimaryButton from '~/components/Button'
 import Text from '~/components/Text'
 
 function Finish() {
+    const navigate = useNavigate()
+
     const images = {
         planets: "/images/illustrations/planets.png",
         cake: "/images/illustrations/blue-cake.png"
@@ -17,7 +20,7 @@ function Finish() {
                     <Text weight='bold' size='h3'>Whatever your wish is, may it come true!</Text>
                     <Text size='caption'>Thank you for following all along, I wish you all the best!</Text>
                 </div>
-                <PrimaryButton className='bg-blue-500 text-white'>Menu</PrimaryButton>
+                <PrimaryButton className='bg-blue-500 text-white' onClick={() => navigate("/menu")}>Menu</PrimaryButton>
             </div>
             <div className='relative flex items-center justify-center'>
                 <img src={images.cake} alt="planets" className='absolute bottom-0 w-[350px]' />

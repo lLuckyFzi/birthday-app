@@ -38,8 +38,8 @@ function Main() {
     return (
         <div className='flex flex-col gap-4'>
             <div className='p-8 flex flex-col gap-3'>
-                <Text weight='bold' size='h3'>HAPPY BIRTHDAY!</Text>
-                <Text weight='medium' size='caption' className='w-[200px]'>Hai, Let’s play some mini game!</Text>
+                <Text weight='bold' size='h3'>HAPPY BIRTHDAY! Anindya</Text>
+                <Text weight='medium' size='caption' className='w-[200px]'>Hai Anin, Let’s play some mini game!</Text>
             </div>
             <div className='relative'>
                 <img src={BackgroundMain} alt='main' />
